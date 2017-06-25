@@ -39,86 +39,91 @@ public class MainActivity extends AppCompatActivity {
         Resources res = getResources();
         String[] schools = res.getStringArray(R.array.school_names);
         String[] acronyms = res.getStringArray(R.array.acryonyms);
-        Map<String, String> as = new HashMap<>(schools.length);
+        //Map<String, String> as = new HashMap<>(schools.length);
 
         ArrayList<School> mSchool = new ArrayList<School>();
-        //TODO: Get rid of hard coding usm and united sikh movement - bad practice and possible leaks
+        //TODO: Get rid of hard coding "usm" and "united sikh movement" - bad practice and possible leaks
         School usm = new School();
         usm.setPath(R.drawable.usm);
-        usm.setAcry("USM");
-        usm.setName("United Sikh Movement");
+        usm.setAcry(getString(R.string.app_label));
+        usm.setName(getString(R.string.app_name));
         mSchool.add(usm);
         for(int i=0; i < schools.length;i++){
             School uni = new School();                                      //Make a School Object
-            as.put(acronyms[i],schools[i]);                                 //Map each School acronym to full name
-            uni.setName(as.get(acronyms[i]));                               //Set School name to non acronym
+            String uri = "drawable/" +acronyms[i].toLowerCase()+"_school";
+            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+            if(imageResource == 0) imageResource = getResources().getIdentifier("drawable/usm",null,getPackageName());
 
-            /*TODO: Figure a way to compare acronym with letters in resources drawable
-            */
-            switch(acronyms[i]){                                            //Probably have to hardcode until we find a better way
-                case "CC":
-                    uni.setAcry(acronyms[0]);
-                    uni.setPath(R.drawable.cc_school);
-                    break;
-                case "CPP":
-                    uni.setAcry(acronyms[1]);
-                    uni.setPath(R.drawable.cpp_school);
-                    break;
-                case "CSUF":
-                    //uni.setName(as.get(acronyms[2]));
-                    uni.setAcry(acronyms[2]);
-                    uni.setPath(R.drawable.csuf_school);
-                    break;
-                case "FSU":
-                    //uni.setName(as.get(acronyms[3]));
-                    uni.setAcry(acronyms[3]);
-                    uni.setPath(R.drawable.fsu_school);
-                    break;
-                case "UCB":
-                    //uni.setName(as.get(acronyms[4]));
-                    uni.setAcry(acronyms[4]);
-                    uni.setPath(R.drawable.ucb_school);
-                    break;
-                case "UCD":
-                    //uni.setName(as.get(acronyms[5]));
-                    uni.setAcry(acronyms[5]);
-                    uni.setPath(R.drawable.ucd_school);
-                    break;
-                case "UCI":
-                    //uni.setName(as.get(acronyms[6]));
-                    uni.setAcry(acronyms[6]);
-                    uni.setPath(R.drawable.uci_school);
-                    break;
-                case "UCLA":
-                    //uni.setName(as.get(acronyms[7]));
-                    uni.setAcry(acronyms[7]);
-                    uni.setPath(R.drawable.ucla_school);
-                    break;
-                case "UCR":
-                    //uni.setName(as.get(acronyms[8]));
-                    uni.setAcry(acronyms[8]);
-                    uni.setPath(R.drawable.ucr_school);
-                    break;
-                case "UCSC":
-                    //uni.setName(as.get(acronyms[9]));
-                    uni.setAcry(acronyms[9]);
-                    uni.setPath(R.drawable.ucsc_school);
-                    break;
-                case "UCSD":
-                    //uni.setName(as.get(acronyms[10]));
-                    uni.setAcry(acronyms[10]);
-                    uni.setPath(R.drawable.ucsd_school);
-                    break;
-                case "USC":
-                    //uni.setName(as.get(acronyms[11]));
-                    uni.setAcry(acronyms[11]);
-                    uni.setPath(R.drawable.usc_school);
-                    break;
-
-                default:
-                    //Should never get here
-                    break;
-            }
+            //as.put(acronyms[i],schools[i]);                                 //Map each School acronym to full name
+            uni.setName(schools[i]);                               //Set School name to non acronym
+            uni.setAcry(acronyms[i]);
+            uni.setPath(imageResource);
+//            /*TODO: Refactor more code ---> Figure a way to compare acronym with letters in resources drawable... DONE
+//            */
+//            switch(acronyms[i]){                                            //Probably have to hardcode until we find a better way
+//                case "CC":
+//                    uni.setAcry(acronyms[0]);
+//                    uni.setPath(R.drawable.cc_school);
+//                    break;
+//                case "CPP":
+//                    uni.setAcry(acronyms[1]);
+//                    uni.setPath(R.drawable.cpp_school);
+//                    break;
+//                case "CSUF":
+//                    //uni.setName(as.get(acronyms[2]));
+//                    uni.setAcry(acronyms[2]);
+//                    uni.setPath(R.drawable.csuf_school);
+//                    break;
+//                case "FSU":
+//                    //uni.setName(as.get(acronyms[3]));
+//                    uni.setAcry(acronyms[3]);
+//                    uni.setPath(R.drawable.acronyms[i]_school);
+//                    break;
+//                case "UCB":
+//                    //uni.setName(as.get(acronyms[4]));
+//                    uni.setAcry(acronyms[4]);
+//                    uni.setPath(R.drawable.ucb_school);
+//                    break;
+//                case "UCD":
+//                    //uni.setName(as.get(acronyms[5]));
+//                    uni.setAcry(acronyms[5]);
+//                    uni.setPath(R.drawable.ucd_school);
+//                    break;
+//                case "UCI":
+//                    //uni.setName(as.get(acronyms[6]));
+//                    uni.setAcry(acronyms[6]);
+//                    uni.setPath(R.drawable.uci_school);
+//                    break;
+//                case "UCLA":
+//                    //uni.setName(as.get(acronyms[7]));
+//                    uni.setAcry(acronyms[7]);
+//                    uni.setPath(R.drawable.ucla_school);
+//                    break;
+//                case "UCR":
+//                    //uni.setName(as.get(acronyms[8]));
+//                    uni.setAcry(acronyms[8]);
+//                    uni.setPath(R.drawable.ucr_school);
+//                    break;
+//                case "UCSC":
+//                    //uni.setName(as.get(acronyms[9]));
+//                    uni.setAcry(acronyms[9]);
+//                    uni.setPath(R.drawable.ucsc_school);
+//                    break;
+//                case "UCSD":
+//                    //uni.setName(as.get(acronyms[10]));
+//                    uni.setAcry(acronyms[10]);
+//                    uni.setPath(R.drawable.ucsd_school);
+//                    break;
+//                case "USC":
+//                    //uni.setName(as.get(acronyms[11]));
+//                    uni.setAcry(acronyms[11]);
+//                    uni.setPath(R.drawable.usc_school);
+//                    break;
+//
+//                default:
+//                    //Should never get here
+//                    break;
+//            }
             mSchool.add(uni);
         }
 

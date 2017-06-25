@@ -1,5 +1,7 @@
 package com.example.manotoor.unitedsikhmovement;
 
+import java.io.Serializable;
+
 /**
  * Created by Mano Toor on 6/19/2017.
  * School.java
@@ -11,7 +13,7 @@ package com.example.manotoor.unitedsikhmovement;
  * - Seal
  */
 
-public class School {
+public class School implements Serializable{
     private String name;
     private String logo;
     private String acry;

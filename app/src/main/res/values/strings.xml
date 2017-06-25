@@ -2,25 +2,23 @@
     <string name="app_name">United Sikh Movement</string>
     <string name="app_label">USM</string>
 
-    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
-    <string name="demo_external_activity">Demo External Activity</string>
     <string name="university_label">University Page</string>
-
     <string name="title_section1">University Name</string>
     <string name="title_section2">Calendar</string>
     <string name="title_section3">Users</string>
 
-
     <string-array name="acryonyms">
         <item>CC</item>
         <item>CPP</item>
-        <item>CSUF</item>
         <item>FSU</item>
+        <item>SJSU</item>
+        <item>SU</item>
         <item>UCB</item>
         <item>UCD</item>
         <item>UCI</item>
         <item>UCLA</item>
         <item>UCR</item>
+        <item>UCSB</item>
         <item>UCSC</item>
         <item>UCSD</item>
         <item>USC</item>
@@ -28,13 +26,15 @@
     <string-array name="school_names">
         <item>Claremont Colleges SSA</item>
         <item>Cal Poly Pomona SSA</item>
-        <item>CSU Fullerton SSA</item>
         <item>Fresno State University SSA</item>
+        <item>San Jose State University SSA</item>
+        <item>Stanford University</item>
         <item>UC Berkeley SSA</item>
         <item>UC Davis SSA</item>
         <item>UC Irvine SSA</item>
         <item>UC Los Angeles SSA</item>
         <item>UC Riverside SSA</item>
+        <item>UC Santa Barbara</item>
         <item>UC Santa Cruz SSA</item>
         <item>UC San Diego SSA</item>
         <item>University of Southern California SSA</item>

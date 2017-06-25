@@ -16,6 +16,8 @@ import org.w3c.dom.Text;
 
 public class UniversityFragment extends Fragment {
     public static final String ARG_SECTION_NUMBER= "section_number";
+    public static final String ARG_UNIVERSITY="university_name";
+    private School school;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -24,7 +26,9 @@ public class UniversityFragment extends Fragment {
         TextView textView = new TextView(getActivity());
         textView.setGravity(Gravity.CENTER);
         Bundle args = getArguments();
-        textView.setText(Integer.toString(args.getInt(ARG_SECTION_NUMBER)));
+        //textView.setText(ARG_SECTION_NUMBER);
+        school = (School) args.getSerializable(ARG_UNIVERSITY);
+        textView.setText(Integer.toString(args.getInt(ARG_SECTION_NUMBER))+ school.getAcry());
 
         return textView;
     }

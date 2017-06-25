@@ -24,14 +24,13 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PhotoHolder> {
 
     private ArrayList<School> schools;
-    private static String mPhoto = "****";
-    private static String PHOTO_KEY ="****";
+    public static String PHOTO_KEY ="PHOTO";
     private Context context;
 
     public static class PhotoHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView mItemImage;
         private TextView mItemText,mItemTextTwo;
-
+        private School university;
 
         public PhotoHolder(View v){
             super(v);
@@ -41,16 +40,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PhotoH
             v.setOnClickListener(this);
         }
 
-        public void bindPhoto(String photo){
-            //mPhoto = photo;
-            //Picasso.with(mItemImage.getContext()).load(R.drawable.mPhoto).into(mItemImage);
+        public void bindPhoto(School school){
+            //Set image
+            Picasso.with(mItemImage.getContext()).load(school.getPath()).fit().into(mItemImage);
+            //Set Name and Acronym
+            mItemText.setText(school.getName());
+            mItemTextTwo.setText(school.getAcry());
+            //Argument for School Name
+            university = school;
         }
 
         @Override
         public void onClick(View v){
             Context context = itemView.getContext();
             Intent showPhotoIntent = new Intent(context, UniversityActivity.class);
-            showPhotoIntent.putExtra(String.valueOf(PHOTO_KEY), String.valueOf(mPhoto));
+            showPhotoIntent.putExtra(PHOTO_KEY, university);
             context.startActivity(showPhotoIntent);
         }
     }
@@ -68,11 +72,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PhotoH
 
     @Override
     public void onBindViewHolder(RecyclerAdapter.PhotoHolder holder, int position) {
-        Picasso.with(context).load(schools.get(position).getPath()).fit().into(holder.mItemImage);
-        holder.mItemText.setText(schools.get(position).getName());
-        holder.mItemTextTwo.setText(schools.get(position).getAcry());
-        mPhoto = schools.get(position).getName();
-        PHOTO_KEY = Integer.toString(position);
+        School school = schools.get(position);
+        holder.bindPhoto(school);
     }
 
     @Override
