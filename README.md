@@ -1,5 +1,5 @@
 # USM-App
-United Sikh Movement App
+# LICENSE - OWNERSHIP BELONGS TO USM, CODE MAY ONLY BE USED IF GRANTED BY USM ORGANIZATION
 
 Contributors:
 Manvinder Toor
