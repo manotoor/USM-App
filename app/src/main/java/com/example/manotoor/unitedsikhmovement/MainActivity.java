@@ -49,9 +49,18 @@ public class MainActivity extends AppCompatActivity {
         usm.setName(getString(R.string.app_name));
         mSchool.add(usm);
         for(int i=0; i < schools.length;i++){
-            School uni = new School();                                      //Make a School Object
+            School uni = new School();//Make a School Object
+
+            /* DYNAMIC WAY TO GET IMAGE RESOURCE
+             * Now if you ever want to change the list, we change the string xml and it'll do everything for us
+              * with proper naming of images
+              *
+              * TODO EVENTUALLY MAKE A WEBSITE THAT HOSTS JSON OBJECTS THAT HOLD SCHOOL INFORMATION
+              * */
             String uri = "drawable/" +acronyms[i].toLowerCase()+"_school";
             int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+
+            //Avoid Null Pointers, By default display USM Image
             if(imageResource == 0) imageResource = getResources().getIdentifier("drawable/usm",null,getPackageName());
 
             //as.put(acronyms[i],schools[i]);                                 //Map each School acronym to full name
