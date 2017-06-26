@@ -6,6 +6,11 @@
     <string name="title_section1">University Name</string>
     <string name="title_section2">Calendar</string>
     <string name="title_section3">Users</string>
+    <string name="drawable">"drawable/"</string>
+    <string name="school">_school</string>
+    <string name="logo">_logo</string>
+    <string name="default_image"></string>
+    <string name="long_paragraph">This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. </string>
 
     <string-array name="acryonyms">
         <item>CC</item>

@@ -3,11 +3,29 @@
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-        <TextView style="?android:textAppearanceMedium"
-            android:padding="16dp"
-            android:lineSpacingMultiplier="1.2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Testing" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pagenumber"
+                style="?android:textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="16dp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="480px"
+                android:id="@+id/image_header"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/long_paragraph"
+                style="?android:textAppearanceLarge"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="16dp"/>
+        </LinearLayout>
+
     </ScrollView>

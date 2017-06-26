@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 public class School implements Serializable{
     private String name;
-    private String logo;
+    private int logo;
     private String acry;
     private String taskbar;
     private String seal;
@@ -24,14 +24,14 @@ public class School implements Serializable{
     //CONSTRUCTOR
     School(){
         name = null;
-        logo = null;
+        logo = 0;
         taskbar = null;
         seal = null;
         acry = null;
         path = 0;
     }
     //OVERLOADED CONSTRUCTOR
-    School(String name, String logo, String taskbar, String seal, int path){
+    School(String name, int logo, String taskbar, String seal, int path){
         this.name = name;
         this.logo = logo;
         this.taskbar = taskbar;
@@ -43,7 +43,7 @@ public class School implements Serializable{
     public String getName(){
         return name;
     }
-    public String getLogo(){
+    public int getLogo(){
         return logo;
     }
     public String getTaskbar(){
@@ -61,7 +61,7 @@ public class School implements Serializable{
     public void setName(String name){
         this.name = name;
     }
-    public void setLogo(String logo){
+    public void setLogo(int logo){
         this.logo = logo;
     }
     public void setTaskbar(String taskbar){

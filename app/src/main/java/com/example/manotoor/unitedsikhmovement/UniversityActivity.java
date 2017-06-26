@@ -13,7 +13,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.TableLayout;
 
+import com.squareup.picasso.Picasso;
+
 import static android.R.drawable.ic_menu_gallery;
+import static android.R.drawable.ic_menu_help;
 import static android.R.drawable.ic_menu_my_calendar;
 
 /**
@@ -52,7 +55,10 @@ public class UniversityActivity extends FragmentActivity {
         init();
     }
     private void init(){
-        mTabLayout.getTabAt(0).setIcon(R.drawable.ucla_logo);
+        if(school.getLogo() != 0)
+            mTabLayout.getTabAt(0).setIcon(school.getLogo());
+        else
+            mTabLayout.getTabAt(0).setIcon(ic_menu_help);
         mTabLayout.getTabAt(1).setIcon(ic_menu_my_calendar);
         mTabLayout.getTabAt(2).setIcon(ic_menu_gallery);
     }

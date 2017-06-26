@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.R.drawable.ic_menu_help;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         usm.setPath(R.drawable.usm);
         usm.setAcry(getString(R.string.app_label));
         usm.setName(getString(R.string.app_name));
+        usm.setLogo(ic_menu_help);
         mSchool.add(usm);
         for(int i=0; i < schools.length;i++){
             School uni = new School();//Make a School Object
@@ -57,16 +60,19 @@ public class MainActivity extends AppCompatActivity {
               *
               * TODO EVENTUALLY MAKE A WEBSITE THAT HOSTS JSON OBJECTS THAT HOLD SCHOOL INFORMATION
               * */
-            String uri = "drawable/" +acronyms[i].toLowerCase()+"_school";
-            int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+            String uri = getString(R.string.drawable) +acronyms[i].toLowerCase();
+            int imageResource = getResources().getIdentifier(uri+getString(R.string.school), null, getPackageName());
+            int logoResource = getResources().getIdentifier(uri+getString(R.string.logo),null,getPackageName());
 
             //Avoid Null Pointers, By default display USM Image
-            if(imageResource == 0) imageResource = getResources().getIdentifier("drawable/usm",null,getPackageName());
+            if(imageResource == 0) imageResource = R.drawable.usm;
+            if(logoResource == 0) logoResource = ic_menu_help;
 
             //as.put(acronyms[i],schools[i]);                                 //Map each School acronym to full name
             uni.setName(schools[i]);                               //Set School name to non acronym
             uni.setAcry(acronyms[i]);
             uni.setPath(imageResource);
+            uni.setLogo(logoResource);
 //            /*TODO: Refactor more code ---> Figure a way to compare acronym with letters in resources drawable... DONE
 //            */
 //            switch(acronyms[i]){                                            //Probably have to hardcode until we find a better way
