@@ -11,6 +11,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.TableLayout;
 
 import com.squareup.picasso.Picasso;
@@ -52,6 +53,7 @@ public class UniversityActivity extends FragmentActivity {
         mPager.setAdapter(mPagerAdapter);
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mPager);
+
         init();
     }
     private void init(){
@@ -85,13 +87,19 @@ public class UniversityActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
+            switch(position){
+                case 0: return new UniversityFragment().newInstance(school);
+                case 1: return new CalendarFragment();
+                case 2: return new CalendarFragment();
+            }
+            return null;
             //Or can copy getPageTitle to and load a new fragmentPage
-            Fragment fragment = new UniversityFragment();
-            Bundle args = new Bundle();
-            args.putInt(UniversityFragment.ARG_SECTION_NUMBER,position+1);
-            args.putSerializable(UniversityFragment.ARG_UNIVERSITY,school);
-            fragment.setArguments(args);
-            return fragment;
+//            Fragment fragment = new UniversityFragment();
+//            Bundle args = new Bundle();
+//            args.putInt(UniversityFragment.ARG_SECTION_NUMBER,position+1);
+//            args.putSerializable(UniversityFragment.ARG_UNIVERSITY,school);
+//            fragment.setArguments(args);
+//            return fragment;
         }
 
         @Override

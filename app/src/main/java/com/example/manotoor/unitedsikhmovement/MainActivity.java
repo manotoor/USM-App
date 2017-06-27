@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             uni.setAcry(acronyms[i]);
             uni.setPath(imageResource);
             uni.setLogo(logoResource);
+            mSchool.add(uni);
 //            /*TODO: Refactor more code ---> Figure a way to compare acronym with letters in resources drawable... DONE
 //            */
 //            switch(acronyms[i]){                                            //Probably have to hardcode until we find a better way
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 //                    //Should never get here
 //                    break;
 //            }
-            mSchool.add(uni);
+
         }
 
 

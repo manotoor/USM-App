@@ -10,7 +10,9 @@
     <string name="school">_school</string>
     <string name="logo">_logo</string>
     <string name="default_image"></string>
-    <string name="long_paragraph">This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. This is a long paragraph. </string>
+    <string name="upcomingEvents">Upcoming Events</string>
+    <string name="pastEvents">Past Events</string>
+    <string name="mission_statement">United Sikh Movement seeks to strengthen the Sikh community by providing a structural foundation and resource base to Sikh students as well as providing students an opportunity to engage critically on Sikh-related issues to incubate and inspire the present and future Sangat leaders.</string>
 
     <string-array name="acryonyms">
         <item>CC</item>
@@ -44,4 +46,7 @@
         <item>UC San Diego SSA</item>
         <item>University of Southern California SSA</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
